@@ -18,7 +18,7 @@ Una aplicación web sencilla para organizar un **Amigo Secreto**. Permite agrega
 
 - HTML
 - CSS
-- JavaScript (Vanilla)
+- JavaScript 
 
 ---
 
