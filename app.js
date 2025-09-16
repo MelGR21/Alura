@@ -1,5 +1,3 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
 // Nombre del array donde se almacenarán los nombres de los amigos
 let amigos = [];
 
@@ -8,13 +6,21 @@ function agregarAmigo() {
     let input = document.querySelector("#amigo"); // capturar el input en id amigo
     let nombreAmigo = input.value.trim(); // eliminar espacios en blanco
 
-    if (nombreAmigo !== "") {
-        amigos.push(nombreAmigo); // agregar al array
-        input.value = ""; // limpiar el campo
-        mostrarAmigos(); // actualizar la lista
-    } else {
+    if (nombreAmigo === "") {
         alert("Por favor, escribe un nombre válido.");
+        return;
     }
+
+    // Validar que el nombre no se repita (sensible a mayúsculas y minúsculas)
+    if (amigos.includes(nombreAmigo)) {
+        alert("Ese nombre ya está en la lista. Ingresa otro diferente.");
+        input.value = "";
+        return;
+    }
+
+    amigos.push(nombreAmigo); // agregar al array
+    input.value = ""; // limpiar el campo
+    mostrarAmigos(); // actualizar la lista
 }
 
 // Función para mostrar la lista de amigos en el HTML
@@ -30,17 +36,17 @@ function mostrarAmigos() {
 }
 
 function sortearAmigo() {
-    if (amigos.length === 0) {
-        alert("No hay amigos en la lista para sortear.");
+    if (amigos.length < 2) {
+        alert("Debes ingresar al menos 2 nombres para poder jugar.");
         return;
     }
 
-    // Pintar la lista solo con los nombres (sin números)
+    // Mostrar lista sin números
     const lista = document.querySelector("#listaAmigos");
     lista.innerHTML = "";
     amigos.forEach((amigo) => {
         const li = document.createElement("li");
-        li.textContent = amigo; // 👈 solo el nombre
+        li.textContent = amigo; 
         lista.append(li);
     });
 
