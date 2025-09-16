@@ -11,6 +11,8 @@ Una aplicación web sencilla para organizar un **Amigo Secreto**. Permite agrega
 - Sortear un amigo secreto aleatoriamente.
 - Resaltar al amigo seleccionado como ganador.
 - Eliminar todos los amigos y reiniciar el juego.
+- Alertar al ususario de un minimo de 2 nombres para iniciar el juego.
+- Evitar duplicados.
 
 ---
 
